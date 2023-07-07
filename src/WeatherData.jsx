@@ -12,7 +12,7 @@ const WeatherData = (props) => {
   const HUMIDITY = wholeData.main.humidity ;
   const VISIBILTY = wholeData.visibility;
   const DESC = wholeData.weather[0].description;
-  const iconURL = <img src={`https://openweathermap.org/img/wn/${wholeData.weather[0].icon}@2x.png`} alt="weatherIcon"/> ; 
+  const iconURL = <img   src={`https://openweathermap.org/img/wn/${wholeData.weather[0].icon}@2x.png`} alt="weatherIcon"/> ; 
 
   const style = {
     color: "black",
@@ -21,7 +21,6 @@ const WeatherData = (props) => {
     marginTop: "30px",
     padding: "15px",
     fontSize: "25px",
-    fontWeight: "bold",
     width:"100%"
   };
 
@@ -29,42 +28,42 @@ const WeatherData = (props) => {
     display: "flex",
     justifyContent:"space-between",
     alignItems: "center",
-    padding:"20px",
-    fontWeight:"bold"
+    fontSize: {xs:"20px", sm:"25px", md:"35px", xl:"50px"}
+    
+  }
+  const font ={
+    fontSize:{xs:"10px", sm:"20px", md:"25px", xl:"30px"},
+    padding:{xs:"5px"}
   }
 
   return (
-    <>
         <Grid style={style}>
-          <Grid item xs={6} sm={6} md={6} lg={6}>
-            <Box  style={style2}>
-              <Typography variant="h4" sx={{color:"#8f0b0b", fontWeight:"bold", fontSize:"40px"}} >{CITY_NAME}</Typography>
-              <Stack direction="column" >
+            <Stack direction={{xs:"column", sm:"row"}} style={style2}>
+              <Typography sx={{color:"#8f0b0b", fontWeight:"bold", fontSize:{xs:"25px", sm:"35px", md:"45px", xl:"50px"}}} >{CITY_NAME}</Typography>
+              <Stack direction="column">
                 <Typography>{iconURL}</Typography>
-                <Typography>{DESC}</Typography>
+                <Typography sx={{fontSize:{xs:"10px", sm:"15px", md:"15px", xl:"22px"}, textAlign:"center"}}>{DESC}</Typography>
               </Stack>
-            </Box>
-            <Box>
+            </Stack >
+            <Grid>
               <Box style={style2}>
-                <Typography variant="h5"> Temperature :</Typography>
-                <Typography variant="h5">{TEMP}°C</Typography>
+                <Typography sx={font}> Temperature :</Typography>
+                <Typography sx={font}>{TEMP}°C</Typography>
               </Box>
               <Box style={style2}>
-                <Typography variant="h5"> Humidity :</Typography>
-                <Typography variant="h5">{HUMIDITY}%</Typography>
+                <Typography sx={font}> Humidity :</Typography>
+                <Typography sx={font}>{HUMIDITY}%</Typography>
               </Box>
               <Box style={style2}>
-                <Typography variant="h5"> Wind Speed :</Typography>
-                <Typography variant="h5">{WIND_SPEED} kmph</Typography>
+                <Typography sx={font}> Wind Speed :</Typography>
+                <Typography sx={font}>{WIND_SPEED} kmph</Typography>
               </Box>
               <Box style={style2}>
-                <Typography variant="h5"> Visibility :</Typography>
-                <Typography variant="h5">{VISIBILTY} m</Typography>
+                <Typography sx={font}> Visibility :</Typography>
+                <Typography sx={font}>{VISIBILTY} m</Typography>
               </Box>
-            </Box>
-          </Grid>
+            </Grid>
         </Grid>
-    </>
   );
 };
 
