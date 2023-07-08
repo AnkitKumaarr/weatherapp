@@ -1,6 +1,6 @@
 import { useState } from "react";
 import WeatherData from "./WeatherData";
-import {Grid, IconButton,Stack, TextField, Typography } from "@mui/material";
+import { Grid, IconButton,Stack, TextField, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import './App.css';
 
@@ -22,6 +22,7 @@ function App() {
   };
   return (
     <Stack 
+      display ="flex"
       justifyContent="center"
       alignItems="center"
       sx={{ height: "100vh" }}
@@ -37,7 +38,7 @@ function App() {
             >WEATHER APP
         </Typography>
         </Stack>
-      <Stack sx={{width:{xl:"30%", md:"40%", sm:"50%", xs:"50%"}}}>
+      <Stack sx={{width:{xl:"30%", md:"40%", sm:"70%", xs:"80%"}}}>
       <Grid component="form" onSubmit={getData}
           sx ={{
               display:"flex",

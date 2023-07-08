@@ -21,8 +21,7 @@ const WeatherData = (props) => {
     marginTop: "30px",
     padding: "15px",
     fontSize: "25px",
-    width:"100%"
-  };
+      };
 
   const style2= {
     display: "flex",
@@ -38,7 +37,7 @@ const WeatherData = (props) => {
 
   return (
         <Grid style={style}>
-            <Stack direction={{xs:"column", sm:"row"}} style={style2}>
+            <Stack direction={{xs:"row", sm:"row"}} style={style2}>
               <Typography sx={{color:"#8f0b0b", fontWeight:"bold", fontSize:{xs:"25px", sm:"35px", md:"45px", xl:"50px"}}} >{CITY_NAME}</Typography>
               <Stack direction="column">
                 <Typography>{iconURL}</Typography>
